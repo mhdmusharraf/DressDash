@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@ a.active hr {
   display: block;
 }
 
-*{
+* {
   font-family: Outfit;
 }
 
@@ -18,8 +18,12 @@ a.active hr {
   font-style: normal;
 }
 
-@media (max-width:640px){
-  a.active{
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  a.active {
     background-color: black;
     color: white;
   }
