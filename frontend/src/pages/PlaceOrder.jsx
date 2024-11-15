@@ -6,7 +6,7 @@ import { ShopContext } from "../context/ShopContext";
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState("cod");
-  const { navigate } = useContext(ShopContext);
+  const { navigate,backendUrl,token,cartItem,setCartItems,getCartAmount,delivery_fee, products} = useContext(ShopContext);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -28,7 +28,20 @@ const PlaceOrder = () => {
   const onSubmitHandler=async(event)=>{
     event.preventDefault();
     try {
-      
+      let orderItems=[];
+      for(const items in cartItem){
+        for(const item in cartItem[items]){
+          if(cartItem[items][item]>0){
+            const itemInfo=structuredClone(products.find(product._id===items))
+            if(itemInfo){
+              itemInfo.size=item
+              itemInfo.quantity=cartItem[items][item]
+              orderItems.push(itemInfo)
+            }
+          }
+        }
+      }
+
       
     } catch (error) {
       
