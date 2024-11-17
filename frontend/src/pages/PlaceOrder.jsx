@@ -42,6 +42,12 @@ const PlaceOrder = () => {
         }
       }
 
+      let orderData={
+        address:formData,
+        items:orderItems,
+        amount:getCartAmount+delivery_fee
+      }
+
       
     } catch (error) {
       
